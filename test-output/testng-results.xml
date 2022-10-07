@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="23" total="24" passed="0" failed="1" skipped="0">
+<testng-results ignored="29" total="30" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-06T20:58:38 EDT" name="Default suite" finished-at="2022-10-06T20:58:45 EDT" duration-ms="7210">
+  <suite started-at="2022-10-07T00:45:59 EDT" name="Default suite" finished-at="2022-10-07T00:46:03 EDT" duration-ms="4521">
     <groups>
     </groups>
-    <test started-at="2022-10-06T20:58:38 EDT" name="Default test" finished-at="2022-10-06T20:58:45 EDT" duration-ms="7210">
+    <test started-at="2022-10-07T00:45:59 EDT" name="Default test" finished-at="2022-10-07T00:46:03 EDT" duration-ms="4521">
       <class name="com.macys.HomePageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.macys.HomePageTest@52b1beb6]" started-at="2022-10-06T20:58:38 EDT" name="setUp" finished-at="2022-10-06T20:58:44 EDT" duration-ms="6226" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.macys.HomePageTest@771a660]" started-at="2022-10-07T00:45:59 EDT" name="setUp" finished-at="2022-10-07T00:46:03 EDT" duration-ms="4287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="setASpecificSizeOfWindow()[pri:0, instance:com.macys.HomePageTest@52b1beb6]" started-at="2022-10-06T20:58:44 EDT" name="setASpecificSizeOfWindow" finished-at="2022-10-06T20:58:44 EDT" duration-ms="9" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="use_of_getTittle_method1_with_assertion()[pri:0, instance:com.macys.HomePageTest@771a660]" started-at="2022-10-07T00:46:03 EDT" name="use_of_getTittle_method1_with_assertion" finished-at="2022-10-07T00:46:03 EDT" duration-ms="4" status="FAIL">
+          <exception class="java.lang.Error">
             <message>
-              <![CDATA[Cannot read field "width" because "targetSize" is null]]>
+              <![CDATA[Unresolved compilation problem: 
+The method assertEquals(String, String, String) is undefined for the type Assert
+]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot read field "width" because "targetSize" is null
-at org.openqa.selenium.remote.DriverCommand.SET_CURRENT_WINDOW_SIZE(DriverCommand.java:416)
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.setSize(RemoteWebDriver.java:980)
-at com.macys.HomePageTest.setASpecificSizeOfWindow(HomePageTest.java:171)
+              <![CDATA[java.lang.Error: Unresolved compilation problem: 
+The method assertEquals(String, String, String) is undefined for the type Assert
+
+at com.macys.HomePageTest.use_of_getTittle_method1_with_assertion(HomePageTest.java:235)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -51,11 +53,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.Error -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setASpecificSizeOfWindow -->
-        <test-method is-config="true" signature="tearUp()[pri:0, instance:com.macys.HomePageTest@52b1beb6]" started-at="2022-10-06T20:58:44 EDT" name="tearUp" finished-at="2022-10-06T20:58:45 EDT" duration-ms="943" status="PASS">
+        </test-method> <!-- use_of_getTittle_method1_with_assertion -->
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:com.macys.HomePageTest@771a660]" started-at="2022-10-07T00:46:03 EDT" name="tearUp" finished-at="2022-10-07T00:46:03 EDT" duration-ms="197" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearUp -->

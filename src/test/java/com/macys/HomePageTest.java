@@ -1,6 +1,13 @@
 package com.macys;
 
 import org.testng.annotations.Test;
+
+import dev.failsafe.internal.util.Assert;
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
+import java.awt.Desktop.Action;
 import java.awt.Dimension;
 import java.security.PublicKey;
 import java.sql.Driver;
@@ -10,6 +17,8 @@ import javax.xml.xpath.XPathConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class HomePageTest extends Base {
@@ -167,7 +176,7 @@ public class HomePageTest extends Base {
 
 	@Test(enabled = false)
 	public void setASpecificSizeOfWindow() throws InterruptedException {
-		new Dimension(800, 500);
+		Dimension dimension = new Dimension(800, 500);
 		driver.manage().window().setSize(Dimension);
 		driver.manage().deleteAllCookies();
 		driver.get("https://www.macys.com/");
@@ -176,4 +185,71 @@ public class HomePageTest extends Base {
 		driver.manage().window().maximize();
 		Thread.sleep(4000);
 	}
+
+	// HW 24
+	@Test(enabled = false) // need to do it again
+	public void dropdown_selectByIndex_method() throws InterruptedException {
+		driver.get("https://www.statefarm.com/");
+		WebElement dropElement = driver.findElement(By.name("productName"));
+		Select select1 = new Select(dropElement);
+		select1.selectByIndex(2);
+		Thread.sleep(4000);
+
+	}
+
+	@Test(enabled = false)
+	public void dropdown_selectByVisibleText_method() throws InterruptedException {
+		driver.get("https://www.statefarm.com/");
+		WebElement dropElement = driver.findElement(By.name("productName"));
+		Select select2 = new Select(dropElement);
+		select2.selectByVisibleText("Life");
+		Thread.sleep(4000);
+	}
+
+	@Test(enabled = false)
+	public void dropdown_selectByValue_method() throws InterruptedException {
+		driver.get("https://www.statefarm.com/");
+		WebElement dropElement = driver.findElement(By.name("productName"));
+		Select select2 = new Select(dropElement);
+		select2.selectByValue("Life");
+		Thread.sleep(4000);
+	}
+
+	@Test(enabled = false)
+	public void mouseHoverOverOnHandbags() throws InterruptedException {
+		Actions actions = new Actions(driver);
+		WebElement handbags = driver.findElement(By.xpath("//span[text()='Handbags']"));
+		Thread.sleep(4000);
+		actions.moveToElement(handbags).build().perform();
+		Thread.sleep(4000);
+
+	}
+
+	@Test(enabled = false)
+	public void logoTest1() {
+		WebElement logo = driver.findElement(By.className("header-logo__image"));
+		boolean flag = logo.isDisplayed();
+		Assert.assertTrue(true, "Application Logo is displayed");
+
+	}
+
+	@Test(enabled = false)
+	public void use_of_getTittle_method1_with_assertion() {
+		String expected = "Men's Clothing: The Best in Men's Fashion - Macy's";
+		String actual = driver.getTitle();
+		System.out.println("Home Page Tittle is:" + actual);
+		Assert.assertEquals(actual, expected, "Home Page Tittle doesn't match");
+	}
+
+	@Test(enabled = false)
+	public void use_of_getTittle_method1_with_assertion1() {
+		String expected = "Men's Clothing: The Best in Men's Fashion - Macy's";
+		String actual = driver.getTitle();
+		System.out.println("Home Page Tittle is:" + actual);
+		Assert.assertEquals(actual, expected, "Home Page Tittle doesn't match");
+		String currentURL = driver.getCurrentUrl();
+		System.out.println("The current url from priority is" + currentURL);
+
+	}
+
 }
