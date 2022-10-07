@@ -5,8 +5,8 @@
     <classes>
       <class name="com.macys.HomePageTest">
         <methods>
+          <include name="use_of_getTittle_method1_with_assertion"/>
           <include name="setUp"/>
-          <include name="setASpecificSizeOfWindow"/>
           <include name="tearUp"/>
         </methods>
       </class> <!-- com.macys.HomePageTest -->
