@@ -6,7 +6,8 @@
       <class name="com.macys.HomePageTest">
         <methods>
           <include name="setUp"/>
-          <include name="forgetPassword"/>
+          <include name="setASpecificSizeOfWindow"/>
+          <include name="tearUp"/>
         </methods>
       </class> <!-- com.macys.HomePageTest -->
     </classes>

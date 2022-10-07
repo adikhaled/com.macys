@@ -8,25 +8,26 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
-	private static final String HOW = null;
-
 	WebDriver driver;
 	
 	public HomePage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath="//a[@class='header-logo__image']")
+	@FindBy (className  = "header-logo__image")
 	WebElement logo;
 	
-	@FindBy(xpath = "//button[@class='button primary expanded']")
+	@FindBy(xpath = "//span[text()='Sign In']")
 	WebElement signInButton2;
 	
-	@FindBy(xpath="//input[@name='user.email_address']")
+	@FindBy(how =How.XPATH , using = "//input[@name='user.email_address']")
 	WebElement clickUserIdField;
 	
-	@FindBy(how=How.XPATH,using="//a[@id='forgot-password']")
+	@FindBy(xpath="//a[@id='forgot-password']")
 	WebElement forgetPassword;
+	
+	@FindBy(id = "forgot-submit-btn")
+	WebElement linkButtonElement;
 	
 	By signIn=By.xpath("//span[text()='Sign In']");
 	
@@ -38,22 +39,27 @@ public class HomePage {
 		System.out.println("The logo is displayed: " + flag);
 		return flag;
 	}
-	public void clickUserIdField() {
+	public void clickUserIdFieldClicking() {
+		driver.findElement(signIn).click();
 		clickUserIdField.click();
 	}
 	public void singInButtonClicked() throws InterruptedException{
 		signInButton2.click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 	}
 	
 	public void forgetPasswordClicked() throws InterruptedException{
 		forgetPasswordClicked();
-			Thread.sleep(5000);		
+			Thread.sleep(2000);		
 	}
+	
+		
 	public void forgetPasswordClicked1() throws InterruptedException {
 		driver.findElement(signIn).click();
-		Thread.sleep(2000);
 		driver.findElement(frgtpass).click();
+		Thread.sleep(2000);
 	}
+	
+	
 	
 }
